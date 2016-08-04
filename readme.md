@@ -2,7 +2,7 @@
 
 A Flask project made from mistakes.
 
-### Stack
+# Stack
 
 ##### Common:
  - make
@@ -17,7 +17,27 @@ A Flask project made from mistakes.
  - Flask-Testing
  - Splinter + Selenium
 
-### Running
+# Configuration
+
+##### Environment Variables and how to setup
+
+run `make setup-mac` to setup environment variables on **Mac OS** platform.
+
+run `make setup-linux` to setup environment variables on **Linux** platform.
+
+There is no Windows support yet.
+
+`SYRUP_DATABASE_URL`: Database connection string.
+
+##### Config files
+
+ - Configurations are made through Python classes in files located under `etc/`
+ - Config files are contextual, meaning that they have specific values for each environment, separated by different classes.
+
+##### Application startup
+ - This project uses [Application factory](http://flask.pocoo.org/docs/0.11/patterns/appfactories/) pattern. That means that every instance of the application is generated through a function that will configure these instances. This configurations include plugin integrations, blueprints registering, choosing different config files, etc.
+
+# Running the project
 
  - `make venv`
     - to create a virtual environment
@@ -30,7 +50,7 @@ A Flask project made from mistakes.
 - `make run-dev`
     -  To run project in dev mode
 
-### Requirements
+# Requirements
 Requirements specifications are separate files located under `requirements` folder.
 
 **Important:** never paste `pip freeze` output on requirement files.

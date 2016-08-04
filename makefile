@@ -13,6 +13,10 @@ test-unit:
 test-functional:
 	$(VENV_NAME)/bin/pip3 install -r requirements/test.txt
 	export PYTHONPATH=. && $(VENV_NAME)/bin/py.test tests/functional
+setup-mac:
+	sh bin/setup.sh '.bash_profile'
+setup-linux:
+	sh bin/setup.sh '.bashrc'
 clean:
 	sh bin/clean.sh . '__pycache__'
 	sh bin/clean.sh tests '.cache'
