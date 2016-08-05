@@ -18,8 +18,8 @@ def factory(config):
 
     app = Flask(__name__)
 
-    config = config or 'etc.config.DefaultConfig'
-    app.config.from_object(config)
+    config = config or 'DefaultConfig'
+    app.config.from_object('etc.config.{}'.format(config))
 
     auth_datastore = SQLAlchemyUserDatastore(db, User, Role)
     security = Security(app, auth_datastore)
