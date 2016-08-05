@@ -2,6 +2,7 @@ from flask import Flask
 from flask_security import Security, SQLAlchemyUserDatastore
 from .models import db
 from .models.auth import User, Role
+from .blueprints.error_handler import error_handler
 
 
 def factory(config):
@@ -22,5 +23,7 @@ def factory(config):
 
     auth_datastore = SQLAlchemyUserDatastore(db, User, Role)
     security = Security(app, auth_datastore)
+
+    app.register_blueprint(error_handler)
 
     return app
