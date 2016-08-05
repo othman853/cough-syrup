@@ -5,6 +5,15 @@ from .models.auth import User, Role
 
 
 def factory(config):
+    """
+    Flask Application Factory function
+
+    Generate a new Flask application through this function by specifying
+    a config object.
+
+    Args:
+        config: The configuration class to be used.
+    """
 
     app = Flask(__name__)
 
