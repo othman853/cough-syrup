@@ -2,7 +2,7 @@
 
 A Flask project made from mistakes.
 
-# Stack
+## Stack
 
 ##### Common:
  - make
@@ -17,7 +17,7 @@ A Flask project made from mistakes.
  - Flask-Testing
  - Splinter + Selenium
 
-# Configuration
+## Configuration
 
 ##### Environment Variables and how to setup
 
@@ -37,7 +37,7 @@ There is no Windows support yet.
 ##### Application startup
  - This project uses [Application factory](http://flask.pocoo.org/docs/0.11/patterns/appfactories/) pattern. That means that every instance of the application is generated through a function that will configure these instances. This configurations include plugin integrations, blueprints registering, choosing different config files, etc.
 
-# Running the project
+## Running the project
 
  - `make venv`
     - to create a virtual environment
@@ -50,7 +50,11 @@ There is no Windows support yet.
 - `make run-dev`
     -  To run project in dev mode
 
-# Requirements
+## Requirements
 Requirements specifications are separate files located under `requirements` folder.
 
 **Important:** never paste `pip freeze` output on requirement files.
+
+## Templating
+ - The template engine is Jinja2, Flask's default.
+ - All templates and macro files are `.html` files.
