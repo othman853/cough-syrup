@@ -27,7 +27,11 @@ run `make setup-linux` to setup environment variables on **Linux** platform.
 
 There is no Windows support yet.
 
+Environment Variables:
+
 `SYRUP_DATABASE_URL`: Database connection string.
+
+`SYRUP_CONFIG`: Configuration class to be used. If this variable is not specified, `DevelopmentConfig` will be used. Look under `etc/config.py` to see available config classes.
 
 ##### Config files
 
