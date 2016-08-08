@@ -3,6 +3,8 @@ VENV_NAME := .venv
 
 run-dev:
 	export PYTHONPATH=. && $(VENV_NAME)/bin/python3 main.py
+run-prod:
+	export PYTHONPATH=. && export SYRUP_CONFIG=DefaultConfig && $(VENV_NAME)/bin/python3 main.py
 venv:
 	sh bin/venv.sh . $(VENV_NAME)
 install-dev:
