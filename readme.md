@@ -31,6 +31,8 @@ Environment Variables:
 
 `SYRUP_DATABASE_URL`: Database connection string.
 
+ - Format example: `postgres://user:password@<host>:<port>/db_name`
+
 `SYRUP_CONFIG`: Configuration class to be used. If this variable is not specified, `DevelopmentConfig` will be used. Look under `etc/config.py` to see available config classes.
 
 ##### Config files
