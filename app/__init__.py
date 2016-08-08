@@ -22,7 +22,12 @@ def factory(config):
     app.config.from_object('etc.config.{}'.format(config))
 
     auth_datastore = SQLAlchemyUserDatastore(db, User, Role)
-    security = Security(app, auth_datastore)
+    Security(app, auth_datastore)
+    db.init_app(app)
+
+    if app.config['RECREATE_DATABASE']:
+        db.drop_all()
+        db.create_all()
 
     app.register_blueprint(error_handler)
 
